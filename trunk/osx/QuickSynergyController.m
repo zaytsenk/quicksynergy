@@ -196,6 +196,11 @@
     }
 }
 
+- (IBAction)gotoGoogleCode:(id)sender
+{
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://code.google.com/p/quicksynergy"]];
+}
+
 - (IBAction)gotoDeveloperTwitter:(id)sender
 {
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://twitter.com/otaviocc"]];
