@@ -1,0 +1,20 @@
+#summary How-to install QuickSynergy on Linux
+#labels Phase-Support
+
+ http://farm4.static.flickr.com/3388/3672298757_011de14348_o.png 
+
+= Steps =
+
+  # Download the source 
+  # Untar
+  # Compile
+
+= Ubuntu/Debian =
+
+If you are using .deb based distributions can use apt-get to install QuickSynergy:
+
+{{{
+sudo apt-get install quicksynergy
+}}}
+
+But note that QuickSynergy version available in these distros can differ from the latest version [http://code.google.com/p/quicksynergy/downloads/list available for download].
