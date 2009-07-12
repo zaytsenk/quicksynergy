@@ -196,6 +196,16 @@
     }
 }
 
+- (IBAction)gotoShareTab:(id)sender
+{
+    [tabview selectTabViewItemAtIndex:0];
+}
+
+- (IBAction)gotoUseTab:(id)sender
+{
+    [tabview selectTabViewItemAtIndex:1];
+}
+
 - (IBAction)gotoGoogleCode:(id)sender
 {
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://code.google.com/p/quicksynergy"]];
