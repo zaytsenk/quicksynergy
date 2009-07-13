@@ -26,5 +26,9 @@
 	<string>NSApplication</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>This software is under GNU GPL 2. Copyright 2005-2009 Otávio Cordeiro. All rights reserved.</string>
+	<key>SUPublicDSAKeyFile</key>
+	<string>SparklePubCertificate.pem</string>
+	<key>SUFeedURL</key>
+	<string>http://quicksynergy.googlecode.com/files/QuickSynergyUpdater.xml</string>
 </dict>
 </plist>
