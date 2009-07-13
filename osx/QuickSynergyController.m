@@ -206,6 +206,11 @@
     [tabview selectTabViewItemAtIndex:1];
 }
 
+- (IBAction)gotoAboutTab:(id)sender
+{
+    [tabview selectTabViewItemAtIndex:2];
+}
+
 - (IBAction)gotoGoogleCode:(id)sender
 {
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://code.google.com/p/quicksynergy"]];

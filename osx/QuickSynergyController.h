@@ -46,6 +46,7 @@
 - (IBAction)startStop:(id)sender;
 - (IBAction)gotoShareTab:(id)sender;
 - (IBAction)gotoUseTab:(id)sender;
+- (IBAction)gotoAboutTab:(id)sender;
 - (IBAction)gotoGoogleCode:(id)sender;
 - (IBAction)gotoDeveloperTwitter:(id)sender;
 - (IBAction)gotoHDMPodcast:(id)sender;
