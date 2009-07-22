@@ -196,34 +196,26 @@
     }
 }
 
-- (IBAction)gotoShareTab:(id)sender
+- (IBAction)gotoTab:(id)sender
 {
-    [tabview selectTabViewItemAtIndex:0];
+    [tabview selectTabViewItemAtIndex:[sender tag]];
 }
 
-- (IBAction)gotoUseTab:(id)sender
+- (IBAction)gotoPage:(id)sender
 {
-    [tabview selectTabViewItemAtIndex:1];
-}
-
-- (IBAction)gotoAboutTab:(id)sender
-{
-    [tabview selectTabViewItemAtIndex:2];
-}
-
-- (IBAction)gotoGoogleCode:(id)sender
-{
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://code.google.com/p/quicksynergy"]];
-}
-
-- (IBAction)gotoDeveloperTwitter:(id)sender
-{
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://twitter.com/otaviocc"]];
-}
-
-- (IBAction)gotoHDMPodcast:(id)sender
-{
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://www.horadomac.com/"]];
+    switch ([sender tag]) {
+        case 0:
+            [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://code.google.com/p/quicksynergy"]];
+            break;
+        case 1:
+            [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://twitter.com/otaviocc"]];
+            break;
+        case 2:
+            [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://www.horadomac.com/"]];
+            break;
+        default:
+            break;
+    }
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification
