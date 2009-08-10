@@ -1,4 +1,4 @@
-#summary How-to install QuickSynergy on Mac OS X
+#summary How-to install QuickSynergy on Mac OS X (Leopard only)
 #labels Phase-Deploy
 
  http://farm4.static.flickr.com/3655/3672298911_2d15010106_o.png 
