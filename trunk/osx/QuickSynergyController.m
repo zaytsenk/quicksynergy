@@ -54,7 +54,7 @@
 
 - (BOOL)createConfigFile
 {
-    NSError *error;
+    NSError *error = [NSError errorWithDomain:NSPOSIXErrorDomain code:0 userInfo:nil];
     NSMutableString *line;
     NSString *localhost = [[NSHost currentHost] name];
     NSString *up = [clientAbove stringValue];
@@ -64,7 +64,7 @@
     NSString *configFile = [NSString stringWithFormat:@"%@/.QuickSynergy.config",
                             NSHomeDirectory()];
     
-    line = [[NSMutableString alloc] init];
+    line = [[[NSMutableString alloc] init] autorelease];
     
     // Options
     [line appendString:@"section: options\n"];
@@ -116,8 +116,9 @@
            atomically:YES
              encoding:NSISOLatin1StringEncoding
                 error:&error];
-    
-    [line release];
+
+    if (![error code])
+        NSLog(@"Error: %@", [error localizedDescription]);
     
     return YES;
 }
