@@ -32,6 +32,7 @@
 @interface QuickSynergyController : NSObject <GrowlApplicationBridgeDelegate>
 {
     SynergyHelper *synergy;
+	BOOL isItRunning;
     
     IBOutlet NSTextField *clientAbove;
     IBOutlet NSTextField *clientBelow;
@@ -46,4 +47,6 @@
 - (IBAction)startStop:(id)sender;
 - (IBAction)gotoTab:(id)sender;
 - (IBAction)gotoPage:(id)sender;
+
+- (void) fileNotifications;
 @end

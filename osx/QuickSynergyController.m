@@ -29,6 +29,10 @@
         synergy = [[SynergyHelper alloc] init];
     }
     
+	isItRunning = false;
+	
+	[self fileNotifications];
+	
     return self;
 }
 
@@ -227,6 +231,41 @@
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication
 {
     return YES;
+}
+
+- (void) receiveSleepNote: (NSNotification*) note
+{
+	if ([synergy isSynergyRunning]) {
+		isItRunning = TRUE;
+		[self startStop:self];
+	} else {
+		isItRunning = FALSE;
+	}
+}
+
+- (void) receiveWakeNote: (NSNotification*) note
+{
+	if (isItRunning) {
+		if (NSOrderedSame == [[[tabview selectedTabViewItem] label] compare:TAB_SHARE]) {
+			[self startStop:self];
+		}
+		else if (NSOrderedSame == [[[tabview selectedTabViewItem] label] compare:TAB_USE]) {
+			[self startStop:self];
+		}
+	}
+	isItRunning = FALSE;
+}
+
+- (void) fileNotifications
+{
+    [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver: self 
+														   selector: @selector(receiveSleepNote:)
+															   name: NSWorkspaceWillSleepNotification
+															 object: NULL];
+    [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver: self 
+														   selector: @selector(receiveWakeNote:)
+															   name: NSWorkspaceDidWakeNotification
+															 object: NULL];
 }
 
 - (void)dealloc
